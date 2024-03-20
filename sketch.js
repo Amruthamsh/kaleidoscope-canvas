@@ -22,7 +22,7 @@ let chunks = [];
 const fr = 30;
 let canvasW, canvasH;
 function setup() {
-  canvasH = windowHeight * 0.75;
+  canvasH = windowHeight * 0.70;
   canvasW = canvasH;
 
   h1 = createElement("h1", "Kaleidoscope Canvas");
