@@ -22,26 +22,30 @@ let chunks = [];
 const fr = 30;
 let canvasW, canvasH;
 function setup() {
-  canvasH = windowHeight * 0.75;
+  canvasH = windowHeight - 270;
   canvasW = canvasH;
 
   h1 = createElement("h1", "Kaleidoscope Canvas");
   h1.position(20, 0);
-  createButton("Brush Slider").position(20, 80);
+  brush_slider = createElement("h4", "Brush Slider");
+  brush_slider.position(20, 60);
   b_slider = createSlider(1, 32, 4, 0.1);
   b_slider.position(20, 105);
 
-  createButton("Symmetry Slider").position(200, 80);
+  sym_slider = createElement("h4", "Symmetry Slider")
+  sym_slider.position(200, 60);
   s_slider = createSlider(3, 32, 1, 1);
   s_slider.position(200, 105);
 
-  createButton("Select Mode:").position(380, 80);
+  select_mode = createElement("h4","Select Mode:")
+  select_mode.position(380, 60);
   mode = createSelect();
-  mode.position(380, 105);
+  mode.position(380, 100);
 
-  createButton("Brush Color:").position(560, 80);
+  brush_color = createElement("h4","Brush Color:");
+  brush_color.position(560, 60);
   brushColorPicker = createColorPicker("black");
-  brushColorPicker.position(560, 105);
+  brushColorPicker.position(560, 100);
 
   mode.option("Harmony Disharmony");
   mode.option("Beside one another");
@@ -55,14 +59,17 @@ function setup() {
   clearButton.mousePressed(clearScreen);
   clearButton.position(20, canvasH + 200);
 
-  createButton("Background Color:").position(140, canvasH + 200);
+  bg_color = createElement("h4","Background Color:")
+
+  bg_color.position(140, canvasH + 180);
 
   bgColorPicker = createColorPicker("white");
   bgColorPicker.position(140, canvasH + 225);
 
-  createButton("Resize Canvas Width:").position(280, canvasH + 200);
-  w_slider = createSlider(canvasH / 2, windowWidth * 0.9, canvasH);
-  w_slider.position(280, canvasH + 225);
+  resize_canvas = createElement("h4","Resize Canvas Width:");
+  resize_canvas.position(300, canvasH + 180);
+  w_slider = createSlider(canvasH / 2, windowWidth * 0.9, canvasW);
+  w_slider.position(300, canvasH + 225);
 
   // Creating the save button for the file
   saveButton = createButton("save image");
